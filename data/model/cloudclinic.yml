@@ -1,0 +1,31 @@
+# Invented architecture of a virtual-care platform. Not Rezilient's real design.
+name: CloudClinic (illustrative)
+zones:
+  internet: {trust: untrusted}
+  dmz: {trust: low}
+  app: {trust: medium}
+  data: {trust: high}
+  corp: {trust: medium}
+elements:
+  patient_app:   {kind: external, zone: internet}
+  clinician_web: {kind: external, zone: internet}
+  ehr_partner:   {kind: external, zone: internet}
+  api_gateway:   {kind: process, zone: dmz, authn: oauth2}
+  visit_service: {kind: process, zone: app, authn: mtls}
+  fhir_adapter:  {kind: process, zone: app, authn: mtls}
+  video_service: {kind: process, zone: app, authn: token}
+  phi_db:        {kind: store, zone: data, data: [PHI], encrypted_at_rest: true}
+  doc_bucket:    {kind: store, zone: data, data: [PHI], encrypted_at_rest: true}
+  audit_log:     {kind: store, zone: data, data: [PII], encrypted_at_rest: true, append_only: true}
+  idp:           {kind: process, zone: corp, authn: mfa}
+flows:
+  - {id: F1, src: patient_app, dst: api_gateway, data: [PHI], tls: true}
+  - {id: F2, src: clinician_web, dst: api_gateway, data: [PHI], tls: true}
+  - {id: F3, src: api_gateway, dst: visit_service, data: [PHI], tls: true}
+  - {id: F4, src: visit_service, dst: phi_db, data: [PHI], tls: true}
+  - {id: F5, src: fhir_adapter, dst: ehr_partner, data: [PHI], tls: true}
+  - {id: F6, src: ehr_partner, dst: fhir_adapter, data: [PHI], tls: true}
+  - {id: F7, src: visit_service, dst: video_service, data: [PII], tls: true}
+  - {id: F8, src: visit_service, dst: doc_bucket, data: [PHI], tls: true}
+  - {id: F9, src: api_gateway, dst: idp, data: [PII], tls: true}
+  - {id: F10, src: visit_service, dst: audit_log, data: [PII], tls: true}
