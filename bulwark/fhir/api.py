@@ -39,7 +39,7 @@ def outcome(sev, code, diag):
 def handle(req):
     """req: {method, path, query, token: {scope: 'a b', patient: 'p1', sub: 'u1'} or None, body}"""
     method, path, q, tok = req["method"], req["path"], req.get("query", {}), req.get("token")
-    AUDIT.append({"method": method, "path": path, "query": q, "sub": (tok or {}).get("sub"), "body": req.get("body")})
+    AUDIT.append({"method": method, "path": path, "query_keys": sorted(q), "sub": (tok or {}).get("sub") or "anonymous"})
     if path == "/metadata":
         return 200, {"resourceType": "CapabilityStatement", "status": "active", "kind": "instance", "fhirVersion": "4.0.1", "format": ["json"]}
     if tok is None:
@@ -51,7 +51,7 @@ def handle(req):
         return 200, {"resourceType": "Bundle", "type": "collection", "entry": [{"resource": r} for t in STORE.values() for r in t.values()]}
     m = re.fullmatch(r"/([A-Za-z]+)(?:/([\w-]+))?", path)
     if not m or m.group(1) not in STORE:
-        return 404, outcome("error", "not-found", f"no route for {method} {path} with query {q}")
+        return 404, outcome("error", "not-found", "no such resource type or route")
     rtype, rid = m.groups()
     if method == "GET" and rid:
         res = STORE[rtype].get(rid)
@@ -71,7 +71,7 @@ def handle(req):
         if not may(scopes, tok, rtype, "write", body if body.get("resourceType") == rtype else None):
             return 403, outcome("error", "forbidden", "insufficient scope")
         if body.get("resourceType") != rtype:
-            return 400, outcome("error", "invalid", f"invalid resource: {json.dumps(body)}")
+            return 400, outcome("error", "invalid", "resource type does not match the endpoint")
         STORE[rtype][body["id"]] = body
         return 201, body
     return 405, outcome("error", "not-supported", "method not allowed")
