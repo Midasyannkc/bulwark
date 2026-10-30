@@ -41,8 +41,6 @@ def lint(doc):
         for t in rb.get("attack", []):
             if not refs.attack_ok(t):
                 out.append(Finding("runbook", "bad-attack-id", "medium", f"{t} is not a real ATT&CK technique", loc))
-        contain = [s for s in steps if s["phase"] == "containment"]
-        evid = [s for s in steps if "preserve" in s["action"].lower() or "log" in " ".join(s.get("evidence", [])).lower()]
-        if contain and not any(s["phase"] == "containment" and "preserv" in s["action"].lower() for s in steps):
-            out.append(Finding("runbook", "containment-without-preservation", "medium", "Containment never preserves evidence before changes", loc))
+        if not any(s["phase"] == "containment" and s.get("preserves_evidence") for s in steps):
+            out.append(Finding("runbook", "containment-without-preservation", "medium", "No containment step is marked as preserving evidence", loc))
     return sorted(out, key=lambda f: (f.location, f.rule))

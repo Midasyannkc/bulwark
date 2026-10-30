@@ -8,7 +8,7 @@ runbooks:
       - {id: 1, phase: detection, owner: security-engineer, action: Confirm the alert and identify the bucket, object count and exposure window, evidence: [config snapshot, access log export], minutes: 30}
       - {id: 2, phase: detection, owner: incident-commander, action: Declare severity and open the incident channel and timeline, evidence: [incident record], minutes: 15}
       - {id: 3, phase: containment, owner: security-engineer, action: Block public access and rotate any exposed credentials without deleting objects, evidence: [change record], minutes: 30}
-      - {id: 4, phase: containment, owner: security-engineer, action: Preserve access logs and object versions before any cleanup, evidence: [log export hash], minutes: 30}
+      - {id: 4, phase: containment, owner: security-engineer, preserves_evidence: true, action: Preserve access logs and object versions before any cleanup, evidence: [log export hash], minutes: 30}
       - {id: 5, phase: eradication, owner: engineering-lead, action: Fix the infrastructure as code that allowed the exposure and add a policy check, evidence: [merged change], minutes: 480}
       - {id: 6, phase: recovery, owner: it-ops, action: Verify the fix with a scan and restore normal access paths, evidence: [scan result], minutes: 120}
       - {id: 7, phase: assessment, owner: privacy-officer, action: Perform the HIPAA four factor risk assessment on the exposed records, evidence: [risk assessment], minutes: 1440, decision: breach_assessment}
@@ -22,7 +22,7 @@ runbooks:
       - {id: 1, phase: detection, owner: security-engineer, action: Review sign-in, MFA and session logs for the account, evidence: [identity provider logs], minutes: 30}
       - {id: 2, phase: detection, owner: incident-commander, action: Declare severity and start the timeline, evidence: [incident record], minutes: 15}
       - {id: 3, phase: containment, owner: it-ops, action: Revoke sessions and tokens, reset credentials and re-enroll MFA, evidence: [change record], minutes: 20}
-      - {id: 4, phase: containment, owner: security-engineer, action: Preserve mailbox and application audit logs for the exposure window, evidence: [log export hash], minutes: 60}
+      - {id: 4, phase: containment, owner: security-engineer, preserves_evidence: true, action: Preserve mailbox and application audit logs for the exposure window, evidence: [log export hash], minutes: 60}
       - {id: 5, phase: eradication, owner: security-engineer, action: Hunt for mail rules, OAuth grants and other persistence, evidence: [hunt notes], minutes: 240}
       - {id: 6, phase: recovery, owner: it-ops, action: Restore access and monitor the account with heightened alerting for 30 days, evidence: [alert rule], minutes: 120}
       - {id: 7, phase: assessment, owner: privacy-officer, action: Determine which records the account could and did access and run the four factor assessment, evidence: [risk assessment], minutes: 2880, decision: breach_assessment}
@@ -36,9 +36,10 @@ runbooks:
       - {id: 1, phase: detection, owner: security-engineer, action: Confirm encryption activity and scope the affected hosts, evidence: [EDR timeline], minutes: 20}
       - {id: 2, phase: detection, owner: incident-commander, action: Declare severity, notify clinical operations and start the timeline, evidence: [incident record], minutes: 15}
       - {id: 3, phase: containment, owner: it-ops, action: Isolate hosts from the network with EDR and keep them powered on to preserve memory, evidence: [isolation record], minutes: 15}
-      - {id: 4, phase: containment, owner: security-engineer, action: Disable the compromised accounts and block the command and control indicators, evidence: [change record], minutes: 30}
-      - {id: 5, phase: eradication, owner: security-engineer, action: Identify initial access and remove persistence before any rebuild, evidence: [forensic summary], minutes: 720}
-      - {id: 6, phase: recovery, owner: it-ops, action: Rebuild from known good images and restore data from verified backups, evidence: [restore test], minutes: 1440}
-      - {id: 7, phase: assessment, owner: privacy-officer, action: Assess whether PHI was acquired or only encrypted, using the four factor assessment, evidence: [risk assessment], minutes: 2880, decision: breach_assessment}
-      - {id: 8, phase: notification, owner: legal-counsel, action: Decide on notices and set the deadline clock, evidence: [notification plan], minutes: 1440}
-      - {id: 9, phase: post-incident, owner: incident-commander, action: Blameless review and backup and segmentation actions, evidence: [after action report], minutes: 4320}
+      - {id: 4, phase: containment, owner: security-engineer, preserves_evidence: true, action: Acquire memory and disk images from affected hosts and export the EDR timeline before any cleanup, evidence: [forensic image hash, EDR export], minutes: 60}
+      - {id: 5, phase: containment, owner: security-engineer, action: Disable the compromised accounts and block the command and control indicators, evidence: [change record], minutes: 30}
+      - {id: 6, phase: eradication, owner: security-engineer, action: Identify initial access and remove persistence before any rebuild, evidence: [forensic summary], minutes: 720}
+      - {id: 7, phase: recovery, owner: it-ops, action: Rebuild from known good images and restore data from verified backups, evidence: [restore test], minutes: 1440}
+      - {id: 8, phase: assessment, owner: privacy-officer, action: Assess whether PHI was acquired or only encrypted, using the four factor assessment, evidence: [risk assessment], minutes: 2880, decision: breach_assessment}
+      - {id: 9, phase: notification, owner: legal-counsel, action: Decide on notices and set the deadline clock, evidence: [notification plan], minutes: 1440}
+      - {id: 10, phase: post-incident, owner: incident-commander, action: Blameless review and backup and segmentation actions, evidence: [after action report], minutes: 4320}

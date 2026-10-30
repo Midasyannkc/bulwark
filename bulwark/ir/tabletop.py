@@ -36,7 +36,7 @@ def score(scenario, runbook, play):
         else:
             late.append(sid); findings.append(f"Step {sid} finished at minute {done[sid]}, target {due[sid]}.")
     # ordering: evidence must be preserved before eradication or recovery work
-    pres = next((sid for sid, s in steps.items() if s["phase"] == "containment" and "preserv" in s["action"].lower()), None)
+    pres = next((sid for sid, s in steps.items() if s["phase"] == "containment" and s.get("preserves_evidence")), None)
     for sid, s in steps.items():
         if s["phase"] in ("eradication", "recovery") and pres in done and sid in done and done[sid] < done[pres]:
             total += 1
