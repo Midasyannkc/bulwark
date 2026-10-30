@@ -21,6 +21,17 @@ def patient_of(res):
     return ref.split("/")[-1] if ref else None
 
 
+def may(scopes, tok, rtype, action, res=None):
+    """True if some scope grants action on rtype, and a patient-level scope also matches the token's patient compartment."""
+    for sc in scopes:
+        if not sc: continue
+        level, t, a = sc
+        if t not in ("*", rtype) or a not in ("*", action): continue
+        if level == "patient" and res is not None and patient_of(res) != tok.get("patient"): continue
+        return True
+    return False
+
+
 def outcome(sev, code, diag):
     return {"resourceType": "OperationOutcome", "issue": [{"severity": sev, "code": code, "diagnostics": diag}]}
 
@@ -42,7 +53,7 @@ def handle(req):
     rtype, rid = m.groups()
     if method == "GET" and rid:
         res = STORE[rtype].get(rid)
-        if not res:
+        if not res or not may(scopes, tok, rtype, "read", res):
             return 404, outcome("error", "not-found", f"{rtype}/{rid} not found")
         return 200, res
     if method == "GET":
@@ -51,6 +62,7 @@ def handle(req):
             out = [p for p in out if any(q["name"].lower() in (n.get("family", "") + " ".join(n.get("given", []))).lower() for n in p.get("name", []))]
         if "patient" in q:
             out = [r for r in out if patient_of(r) == q["patient"]]
+        out = [r for r in out if may(scopes, tok, rtype, "read", r)]
         return 200, {"resourceType": "Bundle", "type": "searchset", "total": len(out), "entry": [{"resource": r} for r in out]}
     if method == "POST":
         body = req.get("body") or {}
