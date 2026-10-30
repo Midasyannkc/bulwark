@@ -17,7 +17,30 @@ def _t(rule, stride, sev, title, loc, tech, ctl, fix, detail=""):
     return Finding("threatmodel", rule, sev, title, loc, detail or fix, {"stride": stride, "attack": tech, "nist": ctl, "mitigation": fix})
 
 
+class ModelError(ValueError):
+    pass
+
+
+DATA_CLASSES = {"PHI", "PII", "PUBLIC", "INTERNAL"}
+
+
+def check_model(m):
+    el, zones, errs = m["elements"], m["zones"], []
+    for n, e in el.items():
+        if e.get("zone") not in zones: errs.append(f"element {n}: unknown zone {e.get('zone')!r}")
+        for d in e.get("data", []):
+            if d not in DATA_CLASSES: errs.append(f"element {n}: unknown data class {d!r}")
+    for f in m["flows"]:
+        for end in ("src", "dst"):
+            if f.get(end) not in el: errs.append(f"flow {f.get('id')}: unknown element {f.get(end)!r}")
+        for d in f.get("data", []):
+            if d not in DATA_CLASSES: errs.append(f"flow {f.get('id')}: unknown data class {d!r} (classes are {sorted(DATA_CLASSES)})")
+    if errs:
+        raise ModelError("; ".join(errs))
+
+
 def analyze(m):
+    check_model(m)
     el, zones = m["elements"], m["zones"]
     out = []
     for f in m["flows"]:
