@@ -31,3 +31,10 @@ def test_scope_parser():
     assert api.parse_scope("patient/Observation.read") == ("patient", "Observation", "read")
     assert api.parse_scope("user/*.*") == ("user", "*", "*")
     assert api.parse_scope("patient/observation.read") is None and api.parse_scope("admin/*.*") is None
+
+
+def test_patient_token_cannot_read_another_patients_record():
+    for path in ("/Patient/p2", "/Observation/o2", "/Encounter/e1"):
+        assert call("GET", path, token={**P1, "scope": "patient/*.read"})[0] in (403, 404), path
+    s, b = call("GET", "/Observation", query={"patient": "p2"})
+    assert s == 403 or b["total"] == 0
