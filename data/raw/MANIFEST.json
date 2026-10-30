@@ -1,0 +1,22 @@
+{
+ "attack": {
+  "bytes": 49253343,
+  "sha256": "66f3fe3f07ef1a2de0bd2fe4b3e8a9ea06c1d0bb2c46171bdbb57c7f7b666524",
+  "url": "https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json"
+ },
+ "fhir": {
+  "bytes": 19610660,
+  "sha256": "f3005bd427a60a3552be16d59e66b4546d0e9d58decd97b87f5943fbef94a1b7",
+  "url": "https://raw.githubusercontent.com/hapifhir/hapi-fhir/master/hapi-fhir-validation-resources-r4/src/main/resources/org/hl7/fhir/r4/model/profile/profiles-resources.xml"
+ },
+ "nist": {
+  "bytes": 10448237,
+  "sha256": "64ca6b4161de51ab6af098a7d101d326f14c95e1abf721396cd8a049e8115eeb",
+  "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json"
+ },
+ "nist_moderate": {
+  "bytes": 10498,
+  "sha256": "e3a0f11237cfaac24dfcf1586e07683f17423757fd84208deb33196b12e8f590",
+  "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json"
+ }
+}

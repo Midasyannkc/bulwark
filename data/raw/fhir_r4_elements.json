@@ -1,0 +1,4858 @@
+{
+"AllergyIntolerance": {
+"AllergyIntolerance": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"AllergyIntolerance.asserter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AllergyIntolerance.category": {
+"max": "*",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AllergyIntolerance.clinicalStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AllergyIntolerance.code": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AllergyIntolerance.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"AllergyIntolerance.criticality": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AllergyIntolerance.encounter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AllergyIntolerance.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AllergyIntolerance.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AllergyIntolerance.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"AllergyIntolerance.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"AllergyIntolerance.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AllergyIntolerance.lastOccurrence": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"AllergyIntolerance.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"AllergyIntolerance.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AllergyIntolerance.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"AllergyIntolerance.onset[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime",
+"Age",
+"Period",
+"Range",
+"string"
+]
+},
+"AllergyIntolerance.patient": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"AllergyIntolerance.reaction": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"AllergyIntolerance.reaction.description": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AllergyIntolerance.reaction.exposureRoute": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AllergyIntolerance.reaction.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AllergyIntolerance.reaction.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AllergyIntolerance.reaction.manifestation": {
+"max": "*",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"AllergyIntolerance.reaction.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AllergyIntolerance.reaction.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"AllergyIntolerance.reaction.onset": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"AllergyIntolerance.reaction.severity": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AllergyIntolerance.reaction.substance": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AllergyIntolerance.recordedDate": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"AllergyIntolerance.recorder": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AllergyIntolerance.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"AllergyIntolerance.type": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AllergyIntolerance.verificationStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"AuditEvent": {
+"AuditEvent": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"AuditEvent.action": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AuditEvent.agent": {
+"max": "*",
+"min": 1,
+"types": [
+"BackboneElement"
+]
+},
+"AuditEvent.agent.altId": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.agent.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.agent.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.agent.location": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AuditEvent.agent.media": {
+"max": "1",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.agent.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.agent.name": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.agent.network": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"AuditEvent.agent.network.address": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.agent.network.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.agent.network.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.agent.network.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.agent.network.type": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AuditEvent.agent.policy": {
+"max": "*",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"AuditEvent.agent.purposeOfUse": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AuditEvent.agent.requestor": {
+"max": "1",
+"min": 1,
+"types": [
+"boolean"
+]
+},
+"AuditEvent.agent.role": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AuditEvent.agent.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AuditEvent.agent.who": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AuditEvent.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"AuditEvent.entity": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"AuditEvent.entity.description": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.entity.detail": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"AuditEvent.entity.detail.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.entity.detail.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.entity.detail.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.entity.detail.type": {
+"max": "1",
+"min": 1,
+"types": [
+"string"
+]
+},
+"AuditEvent.entity.detail.value[x]": {
+"max": "1",
+"min": 1,
+"types": [
+"string",
+"base64Binary"
+]
+},
+"AuditEvent.entity.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.entity.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.entity.lifecycle": {
+"max": "1",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.entity.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.entity.name": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.entity.query": {
+"max": "1",
+"min": 0,
+"types": [
+"base64Binary"
+]
+},
+"AuditEvent.entity.role": {
+"max": "1",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.entity.securityLabel": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.entity.type": {
+"max": "1",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.entity.what": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"AuditEvent.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"AuditEvent.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AuditEvent.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"AuditEvent.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.outcome": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"AuditEvent.outcomeDesc": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"AuditEvent.purposeOfEvent": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"AuditEvent.recorded": {
+"max": "1",
+"min": 1,
+"types": [
+"instant"
+]
+},
+"AuditEvent.source": {
+"max": "1",
+"min": 1,
+"types": [
+"BackboneElement"
+]
+},
+"AuditEvent.source.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.source.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"AuditEvent.source.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"AuditEvent.source.observer": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"AuditEvent.source.site": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"AuditEvent.source.type": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.subtype": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"AuditEvent.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"AuditEvent.type": {
+"max": "1",
+"min": 1,
+"types": [
+"Coding"
+]
+}
+},
+"Bundle": {
+"Bundle": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Bundle.entry": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Bundle.entry.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.fullUrl": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Bundle.entry.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.entry.link": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Bundle.entry.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.request": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Bundle.entry.request.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.request.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.entry.request.ifMatch": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Bundle.entry.request.ifModifiedSince": {
+"max": "1",
+"min": 0,
+"types": [
+"instant"
+]
+},
+"Bundle.entry.request.ifNoneExist": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Bundle.entry.request.ifNoneMatch": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Bundle.entry.request.method": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Bundle.entry.request.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.request.url": {
+"max": "1",
+"min": 1,
+"types": [
+"uri"
+]
+},
+"Bundle.entry.resource": {
+"max": "1",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Bundle.entry.response": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Bundle.entry.response.etag": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Bundle.entry.response.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.response.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.entry.response.lastModified": {
+"max": "1",
+"min": 0,
+"types": [
+"instant"
+]
+},
+"Bundle.entry.response.location": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Bundle.entry.response.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.response.outcome": {
+"max": "1",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Bundle.entry.response.status": {
+"max": "1",
+"min": 1,
+"types": [
+"string"
+]
+},
+"Bundle.entry.search": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Bundle.entry.search.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.search.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.entry.search.mode": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Bundle.entry.search.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.entry.search.score": {
+"max": "1",
+"min": 0,
+"types": [
+"decimal"
+]
+},
+"Bundle.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.identifier": {
+"max": "1",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Bundle.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Bundle.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Bundle.link": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Bundle.link.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.link.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Bundle.link.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Bundle.link.relation": {
+"max": "1",
+"min": 1,
+"types": [
+"string"
+]
+},
+"Bundle.link.url": {
+"max": "1",
+"min": 1,
+"types": [
+"uri"
+]
+},
+"Bundle.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Bundle.signature": {
+"max": "1",
+"min": 0,
+"types": [
+"Signature"
+]
+},
+"Bundle.timestamp": {
+"max": "1",
+"min": 0,
+"types": [
+"instant"
+]
+},
+"Bundle.total": {
+"max": "1",
+"min": 0,
+"types": [
+"unsignedInt"
+]
+},
+"Bundle.type": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+}
+},
+"Condition": {
+"Condition": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Condition.abatement[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime",
+"Age",
+"Period",
+"Range",
+"string"
+]
+},
+"Condition.asserter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Condition.bodySite": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.category": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.clinicalStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.code": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Condition.encounter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Condition.evidence": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Condition.evidence.code": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.evidence.detail": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Condition.evidence.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.evidence.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Condition.evidence.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Condition.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Condition.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Condition.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Condition.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Condition.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"Condition.onset[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime",
+"Age",
+"Period",
+"Range",
+"string"
+]
+},
+"Condition.recordedDate": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"Condition.recorder": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Condition.severity": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.stage": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Condition.stage.assessment": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Condition.stage.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.stage.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Condition.stage.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Condition.stage.summary": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.stage.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Condition.subject": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Condition.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Condition.verificationStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"Consent": {
+"Consent": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Consent.category": {
+"max": "*",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Consent.dateTime": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"Consent.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Consent.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Consent.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Consent.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Consent.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.organization": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Consent.patient": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Consent.performer": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Consent.policy": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Consent.policy.authority": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Consent.policy.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.policy.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.policy.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.policy.uri": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Consent.policyRule": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.provision": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Consent.provision.action": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.provision.actor": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Consent.provision.actor.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.actor.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.provision.actor.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.actor.reference": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Consent.provision.actor.role": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.provision.class": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"Consent.provision.code": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.provision.data": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Consent.provision.data.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.data.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.provision.data.meaning": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Consent.provision.data.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.data.reference": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Consent.provision.dataPeriod": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Consent.provision.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.provision.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.provision.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Consent.provision.provision": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Consent.provision.purpose": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"Consent.provision.securityLabel": {
+"max": "*",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"Consent.provision.type": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Consent.scope": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Consent.source[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"Attachment",
+"Reference"
+]
+},
+"Consent.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Consent.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Consent.verification": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Consent.verification.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.verification.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Consent.verification.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Consent.verification.verificationDate": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"Consent.verification.verified": {
+"max": "1",
+"min": 1,
+"types": [
+"boolean"
+]
+},
+"Consent.verification.verifiedWith": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+}
+},
+"Coverage": {
+"Coverage": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Coverage.beneficiary": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Coverage.class": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Coverage.class.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.class.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Coverage.class.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.class.name": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Coverage.class.type": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Coverage.class.value": {
+"max": "1",
+"min": 1,
+"types": [
+"string"
+]
+},
+"Coverage.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Coverage.contract": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Coverage.costToBeneficiary": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Coverage.costToBeneficiary.exception": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Coverage.costToBeneficiary.exception.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.costToBeneficiary.exception.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Coverage.costToBeneficiary.exception.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.costToBeneficiary.exception.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Coverage.costToBeneficiary.exception.type": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Coverage.costToBeneficiary.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.costToBeneficiary.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Coverage.costToBeneficiary.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.costToBeneficiary.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Coverage.costToBeneficiary.value[x]": {
+"max": "1",
+"min": 1,
+"types": [
+"Quantity",
+"Money"
+]
+},
+"Coverage.dependent": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Coverage.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Coverage.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Coverage.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Coverage.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Coverage.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Coverage.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Coverage.network": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Coverage.order": {
+"max": "1",
+"min": 0,
+"types": [
+"positiveInt"
+]
+},
+"Coverage.payor": {
+"max": "*",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Coverage.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Coverage.policyHolder": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Coverage.relationship": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Coverage.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Coverage.subrogation": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"Coverage.subscriber": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Coverage.subscriberId": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Coverage.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Coverage.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"DocumentReference": {
+"DocumentReference": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"DocumentReference.authenticator": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.author": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.category": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"DocumentReference.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"DocumentReference.content": {
+"max": "*",
+"min": 1,
+"types": [
+"BackboneElement"
+]
+},
+"DocumentReference.content.attachment": {
+"max": "1",
+"min": 1,
+"types": [
+"Attachment"
+]
+},
+"DocumentReference.content.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.content.format": {
+"max": "1",
+"min": 0,
+"types": [
+"Coding"
+]
+},
+"DocumentReference.content.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"DocumentReference.content.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.context": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"DocumentReference.context.encounter": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.context.event": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"DocumentReference.context.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.context.facilityType": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"DocumentReference.context.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"DocumentReference.context.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.context.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"DocumentReference.context.practiceSetting": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"DocumentReference.context.related": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.context.sourcePatientInfo": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.custodian": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.date": {
+"max": "1",
+"min": 0,
+"types": [
+"instant"
+]
+},
+"DocumentReference.description": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"DocumentReference.docStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"DocumentReference.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"DocumentReference.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"DocumentReference.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"DocumentReference.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"DocumentReference.masterIdentifier": {
+"max": "1",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"DocumentReference.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"DocumentReference.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.relatesTo": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"DocumentReference.relatesTo.code": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"DocumentReference.relatesTo.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.relatesTo.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"DocumentReference.relatesTo.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"DocumentReference.relatesTo.target": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.securityLabel": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"DocumentReference.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"DocumentReference.subject": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"DocumentReference.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"DocumentReference.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"Encounter": {
+"Encounter": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Encounter.account": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.appointment": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.basedOn": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.class": {
+"max": "1",
+"min": 1,
+"types": [
+"Coding"
+]
+},
+"Encounter.classHistory": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.classHistory.class": {
+"max": "1",
+"min": 1,
+"types": [
+"Coding"
+]
+},
+"Encounter.classHistory.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.classHistory.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.classHistory.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.classHistory.period": {
+"max": "1",
+"min": 1,
+"types": [
+"Period"
+]
+},
+"Encounter.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Encounter.diagnosis": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.diagnosis.condition": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Encounter.diagnosis.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.diagnosis.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.diagnosis.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.diagnosis.rank": {
+"max": "1",
+"min": 0,
+"types": [
+"positiveInt"
+]
+},
+"Encounter.diagnosis.use": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.episodeOfCare": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.hospitalization": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.hospitalization.admitSource": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.hospitalization.destination": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.hospitalization.dietPreference": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.hospitalization.dischargeDisposition": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.hospitalization.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.hospitalization.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.hospitalization.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.hospitalization.origin": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.hospitalization.preAdmissionIdentifier": {
+"max": "1",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Encounter.hospitalization.reAdmission": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.hospitalization.specialArrangement": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.hospitalization.specialCourtesy": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Encounter.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Encounter.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Encounter.length": {
+"max": "1",
+"min": 0,
+"types": [
+"Duration"
+]
+},
+"Encounter.location": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.location.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.location.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.location.location": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Encounter.location.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.location.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Encounter.location.physicalType": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.location.status": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Encounter.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Encounter.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.partOf": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.participant": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.participant.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.participant.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.participant.individual": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.participant.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.participant.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Encounter.participant.type": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Encounter.priority": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.reasonCode": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.reasonReference": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.serviceProvider": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.serviceType": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Encounter.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Encounter.statusHistory": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Encounter.statusHistory.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.statusHistory.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Encounter.statusHistory.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Encounter.statusHistory.period": {
+"max": "1",
+"min": 1,
+"types": [
+"Period"
+]
+},
+"Encounter.statusHistory.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Encounter.subject": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Encounter.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Encounter.type": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"MedicationRequest": {
+"MedicationRequest": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"MedicationRequest.authoredOn": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime"
+]
+},
+"MedicationRequest.basedOn": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.category": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"MedicationRequest.courseOfTherapyType": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.detectedIssue": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.dispenseRequest": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"MedicationRequest.dispenseRequest.dispenseInterval": {
+"max": "1",
+"min": 0,
+"types": [
+"Duration"
+]
+},
+"MedicationRequest.dispenseRequest.expectedSupplyDuration": {
+"max": "1",
+"min": 0,
+"types": [
+"Duration"
+]
+},
+"MedicationRequest.dispenseRequest.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.dispenseRequest.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill.duration": {
+"max": "1",
+"min": 0,
+"types": [
+"Duration"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.dispenseRequest.initialFill.quantity": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity"
+]
+},
+"MedicationRequest.dispenseRequest.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.dispenseRequest.numberOfRepeatsAllowed": {
+"max": "1",
+"min": 0,
+"types": [
+"unsignedInt"
+]
+},
+"MedicationRequest.dispenseRequest.performer": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.dispenseRequest.quantity": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity"
+]
+},
+"MedicationRequest.dispenseRequest.validityPeriod": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"MedicationRequest.doNotPerform": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"MedicationRequest.dosageInstruction": {
+"max": "*",
+"min": 0,
+"types": [
+"Dosage"
+]
+},
+"MedicationRequest.encounter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.eventHistory": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.groupIdentifier": {
+"max": "1",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"MedicationRequest.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"MedicationRequest.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"MedicationRequest.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"MedicationRequest.instantiatesCanonical": {
+"max": "*",
+"min": 0,
+"types": [
+"canonical"
+]
+},
+"MedicationRequest.instantiatesUri": {
+"max": "*",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"MedicationRequest.insurance": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.intent": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"MedicationRequest.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"MedicationRequest.medication[x]": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept",
+"Reference"
+]
+},
+"MedicationRequest.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"MedicationRequest.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"MedicationRequest.performer": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.performerType": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.priorPrescription": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.priority": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"MedicationRequest.reasonCode": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.reasonReference": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.recorder": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.reported[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean",
+"Reference"
+]
+},
+"MedicationRequest.requester": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"MedicationRequest.statusReason": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.subject": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.substitution": {
+"max": "1",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"MedicationRequest.substitution.allowed[x]": {
+"max": "1",
+"min": 1,
+"types": [
+"boolean",
+"CodeableConcept"
+]
+},
+"MedicationRequest.substitution.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.substitution.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"MedicationRequest.substitution.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"MedicationRequest.substitution.reason": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"MedicationRequest.supportingInformation": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"MedicationRequest.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+}
+},
+"Observation": {
+"Observation": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Observation.basedOn": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.bodySite": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.category": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.code": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.component": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Observation.component.code": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.component.dataAbsentReason": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.component.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.component.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Observation.component.interpretation": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.component.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.component.referenceRange": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Observation.component.value[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity",
+"CodeableConcept",
+"string",
+"boolean",
+"integer",
+"Range",
+"Ratio",
+"SampledData",
+"time",
+"dateTime",
+"Period"
+]
+},
+"Observation.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Observation.dataAbsentReason": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.derivedFrom": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.device": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.effective[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime",
+"Period",
+"Timing",
+"instant"
+]
+},
+"Observation.encounter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.focus": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.hasMember": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Observation.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Observation.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Observation.interpretation": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.issued": {
+"max": "1",
+"min": 0,
+"types": [
+"instant"
+]
+},
+"Observation.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Observation.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Observation.method": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"Observation.partOf": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.performer": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.referenceRange": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Observation.referenceRange.age": {
+"max": "1",
+"min": 0,
+"types": [
+"Range"
+]
+},
+"Observation.referenceRange.appliesTo": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.referenceRange.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.referenceRange.high": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity"
+]
+},
+"Observation.referenceRange.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Observation.referenceRange.low": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity"
+]
+},
+"Observation.referenceRange.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Observation.referenceRange.text": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Observation.referenceRange.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Observation.specimen": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Observation.subject": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Observation.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Observation.value[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"Quantity",
+"CodeableConcept",
+"string",
+"boolean",
+"integer",
+"Range",
+"Ratio",
+"SampledData",
+"time",
+"dateTime",
+"Period"
+]
+}
+},
+"Organization": {
+"Organization": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Organization.active": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"Organization.address": {
+"max": "*",
+"min": 0,
+"types": [
+"Address"
+]
+},
+"Organization.alias": {
+"max": "*",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Organization.contact": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Organization.contact.address": {
+"max": "1",
+"min": 0,
+"types": [
+"Address"
+]
+},
+"Organization.contact.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Organization.contact.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Organization.contact.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Organization.contact.name": {
+"max": "1",
+"min": 0,
+"types": [
+"HumanName"
+]
+},
+"Organization.contact.purpose": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Organization.contact.telecom": {
+"max": "*",
+"min": 0,
+"types": [
+"ContactPoint"
+]
+},
+"Organization.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Organization.endpoint": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Organization.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Organization.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Organization.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Organization.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Organization.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Organization.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Organization.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Organization.name": {
+"max": "1",
+"min": 0,
+"types": [
+"string"
+]
+},
+"Organization.partOf": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Organization.telecom": {
+"max": "*",
+"min": 0,
+"types": [
+"ContactPoint"
+]
+},
+"Organization.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Organization.type": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+}
+},
+"Patient": {
+"Patient": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Patient.active": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"Patient.address": {
+"max": "*",
+"min": 0,
+"types": [
+"Address"
+]
+},
+"Patient.birthDate": {
+"max": "1",
+"min": 0,
+"types": [
+"date"
+]
+},
+"Patient.communication": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Patient.communication.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.communication.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Patient.communication.language": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Patient.communication.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.communication.preferred": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"Patient.contact": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Patient.contact.address": {
+"max": "1",
+"min": 0,
+"types": [
+"Address"
+]
+},
+"Patient.contact.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.contact.gender": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Patient.contact.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Patient.contact.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.contact.name": {
+"max": "1",
+"min": 0,
+"types": [
+"HumanName"
+]
+},
+"Patient.contact.organization": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Patient.contact.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Patient.contact.relationship": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Patient.contact.telecom": {
+"max": "*",
+"min": 0,
+"types": [
+"ContactPoint"
+]
+},
+"Patient.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Patient.deceased[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean",
+"dateTime"
+]
+},
+"Patient.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.gender": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Patient.generalPractitioner": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Patient.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Patient.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Patient.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Patient.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Patient.link": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Patient.link.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.link.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Patient.link.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.link.other": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Patient.link.type": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Patient.managingOrganization": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Patient.maritalStatus": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Patient.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Patient.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Patient.multipleBirth[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean",
+"integer"
+]
+},
+"Patient.name": {
+"max": "*",
+"min": 0,
+"types": [
+"HumanName"
+]
+},
+"Patient.photo": {
+"max": "*",
+"min": 0,
+"types": [
+"Attachment"
+]
+},
+"Patient.telecom": {
+"max": "*",
+"min": 0,
+"types": [
+"ContactPoint"
+]
+},
+"Patient.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+}
+},
+"Practitioner": {
+"Practitioner": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Practitioner.active": {
+"max": "1",
+"min": 0,
+"types": [
+"boolean"
+]
+},
+"Practitioner.address": {
+"max": "*",
+"min": 0,
+"types": [
+"Address"
+]
+},
+"Practitioner.birthDate": {
+"max": "1",
+"min": 0,
+"types": [
+"date"
+]
+},
+"Practitioner.communication": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Practitioner.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Practitioner.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Practitioner.gender": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Practitioner.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Practitioner.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Practitioner.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Practitioner.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Practitioner.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Practitioner.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Practitioner.name": {
+"max": "*",
+"min": 0,
+"types": [
+"HumanName"
+]
+},
+"Practitioner.photo": {
+"max": "*",
+"min": 0,
+"types": [
+"Attachment"
+]
+},
+"Practitioner.qualification": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Practitioner.qualification.code": {
+"max": "1",
+"min": 1,
+"types": [
+"CodeableConcept"
+]
+},
+"Practitioner.qualification.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Practitioner.qualification.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Practitioner.qualification.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Practitioner.qualification.issuer": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Practitioner.qualification.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Practitioner.qualification.period": {
+"max": "1",
+"min": 0,
+"types": [
+"Period"
+]
+},
+"Practitioner.telecom": {
+"max": "*",
+"min": 0,
+"types": [
+"ContactPoint"
+]
+},
+"Practitioner.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+}
+},
+"Procedure": {
+"Procedure": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Procedure.asserter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.basedOn": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.bodySite": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.category": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.code": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.complication": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.complicationDetail": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Procedure.encounter": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.focalDevice": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Procedure.focalDevice.action": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.focalDevice.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.focalDevice.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Procedure.focalDevice.manipulated": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Procedure.focalDevice.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.followUp": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Procedure.identifier": {
+"max": "*",
+"min": 0,
+"types": [
+"Identifier"
+]
+},
+"Procedure.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Procedure.instantiatesCanonical": {
+"max": "*",
+"min": 0,
+"types": [
+"canonical"
+]
+},
+"Procedure.instantiatesUri": {
+"max": "*",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Procedure.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Procedure.location": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Procedure.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.note": {
+"max": "*",
+"min": 0,
+"types": [
+"Annotation"
+]
+},
+"Procedure.outcome": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.partOf": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.performed[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"dateTime",
+"Period",
+"string",
+"Age",
+"Range"
+]
+},
+"Procedure.performer": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Procedure.performer.actor": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Procedure.performer.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.performer.function": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.performer.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Procedure.performer.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Procedure.performer.onBehalfOf": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.reasonCode": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.reasonReference": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.recorder": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.report": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Procedure.status": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Procedure.statusReason": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.subject": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Procedure.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+},
+"Procedure.usedCode": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Procedure.usedReference": {
+"max": "*",
+"min": 0,
+"types": [
+"Reference"
+]
+}
+},
+"Provenance": {
+"Provenance": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Provenance.activity": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Provenance.agent": {
+"max": "*",
+"min": 1,
+"types": [
+"BackboneElement"
+]
+},
+"Provenance.agent.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.agent.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Provenance.agent.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.agent.onBehalfOf": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Provenance.agent.role": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Provenance.agent.type": {
+"max": "1",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Provenance.agent.who": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Provenance.contained": {
+"max": "*",
+"min": 0,
+"types": [
+"Resource"
+]
+},
+"Provenance.entity": {
+"max": "*",
+"min": 0,
+"types": [
+"BackboneElement"
+]
+},
+"Provenance.entity.agent": {
+"max": "*",
+"min": 0,
+"types": []
+},
+"Provenance.entity.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.entity.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Provenance.entity.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.entity.role": {
+"max": "1",
+"min": 1,
+"types": [
+"code"
+]
+},
+"Provenance.entity.what": {
+"max": "1",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Provenance.extension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.id": {
+"max": "1",
+"min": 0,
+"types": [
+"http://hl7.org/fhirpath/System.String"
+]
+},
+"Provenance.implicitRules": {
+"max": "1",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Provenance.language": {
+"max": "1",
+"min": 0,
+"types": [
+"code"
+]
+},
+"Provenance.location": {
+"max": "1",
+"min": 0,
+"types": [
+"Reference"
+]
+},
+"Provenance.meta": {
+"max": "1",
+"min": 0,
+"types": [
+"Meta"
+]
+},
+"Provenance.modifierExtension": {
+"max": "*",
+"min": 0,
+"types": [
+"Extension"
+]
+},
+"Provenance.occurred[x]": {
+"max": "1",
+"min": 0,
+"types": [
+"Period",
+"dateTime"
+]
+},
+"Provenance.policy": {
+"max": "*",
+"min": 0,
+"types": [
+"uri"
+]
+},
+"Provenance.reason": {
+"max": "*",
+"min": 0,
+"types": [
+"CodeableConcept"
+]
+},
+"Provenance.recorded": {
+"max": "1",
+"min": 1,
+"types": [
+"instant"
+]
+},
+"Provenance.signature": {
+"max": "*",
+"min": 0,
+"types": [
+"Signature"
+]
+},
+"Provenance.target": {
+"max": "*",
+"min": 1,
+"types": [
+"Reference"
+]
+},
+"Provenance.text": {
+"max": "1",
+"min": 0,
+"types": [
+"Narrative"
+]
+}
+}
+}
