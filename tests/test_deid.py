@@ -49,3 +49,10 @@ def test_patient_names_in_free_text_are_removed():
     d = deid.deidentify(FX["observations"][2], KEY, names=names)
     assert deid.leaks(d, RAW) == []
     assert "Ada" not in json.dumps(d) and "Fakename" not in json.dumps(d)
+
+
+def test_timestamps_with_a_time_component_are_reduced_to_the_year():
+    """Encounter e1 has period.start 2026-09-12T09:00:00Z.  The date pattern needs a word boundary and missed it."""
+    d = deid.deidentify(FX["encounters"][0], KEY)
+    assert d["period"] == {"start": "2026", "end": "2026"}
+    assert deid.leaks(d, RAW) == []
