@@ -66,6 +66,8 @@ def handle(req):
         return 200, {"resourceType": "Bundle", "type": "searchset", "total": len(out), "entry": [{"resource": r} for r in out]}
     if method == "POST":
         body = req.get("body") or {}
+        if not may(scopes, tok, rtype, "write", body if body.get("resourceType") == rtype else None):
+            return 403, outcome("error", "forbidden", "insufficient scope")
         if body.get("resourceType") != rtype:
             return 400, outcome("error", "invalid", f"invalid resource: {json.dumps(body)}")
         STORE[rtype][body["id"]] = body
