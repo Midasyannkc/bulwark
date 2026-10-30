@@ -84,3 +84,16 @@ def test_bulk_export_requires_a_system_scope():
     assert call("GET", "/$export", token={"scope": "user/Patient.read", "sub": "dr"})[0] == 403
     s, b = call("GET", "/$export", token=SYS)
     assert s == 200 and len(b["entry"]) == 7
+
+
+def test_audit_log_and_errors_do_not_contain_phi():
+    api.AUDIT.clear()
+    bad = {"resourceType": "Patient", "id": "zz", "name": [{"family": "Secretname"}]}
+    s, b = call("POST", "/Observation", token={**P1, "scope": "patient/Observation.write"}, body=bad)
+    call("GET", "/Patient", query={"name": "Fakename"})
+    call("GET", "/Nonexistent", query={"name": "Samplesmith"})
+    s2, b2 = call("GET", "/Nonexistent", query={"name": "Samplesmith"})
+    blob = json.dumps(api.AUDIT) + json.dumps(b) + json.dumps(b2)
+    for secret in ("Secretname", "Fakename", "Samplesmith"):
+        assert secret not in blob, secret
+    assert all("body" not in a for a in api.AUDIT) and all(a["sub"] for a in api.AUDIT)
