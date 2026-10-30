@@ -19,8 +19,10 @@ def _element_names(rtype):
 def _match(key, names):
     if key in names: return names[key]
     for n, d in names.items():
-        if n.endswith("[x]") and key.startswith(n[:-3]) and key[len(n) - 3:][:1].isupper():
-            return d
+        if n.endswith("[x]") and key.startswith(n[:-3]):
+            suffix = key[len(n) - 3:]
+            if suffix in {t[:1].upper() + t[1:] for t in d["types"]}:
+                return d
     return None
 
 
