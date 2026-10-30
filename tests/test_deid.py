@@ -41,3 +41,11 @@ def test_leak_scanner_detects_planted_identifiers():
     bad = {"resourceType": "Observation", "id": "z", "status": "final", "note": [{"text": "call 214-555-0188 or ada@example.test, SSN 123-45-6789"}], "effectiveDateTime": "2026-09-01"}
     rules = {f.rule for f in deid.leaks(bad)}
     assert {"leak-phone", "leak-email", "leak-ssn", "leak-full-date"} <= rules
+
+
+def test_patient_names_in_free_text_are_removed():
+    """Observation o3 has 'Patient Ada Fakename called ...' in a note.  Pattern scrubbing cannot find names."""
+    names = deid.names_for(FX["patients"])
+    d = deid.deidentify(FX["observations"][2], KEY, names=names)
+    assert deid.leaks(d, RAW) == []
+    assert "Ada" not in json.dumps(d) and "Fakename" not in json.dumps(d)
