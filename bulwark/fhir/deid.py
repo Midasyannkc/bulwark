@@ -19,9 +19,22 @@ def pseudonym(pid, key):
     return "x" + hmac.new(key, pid.encode(), hashlib.sha256).hexdigest()[:12]
 
 
-def _scrub_text(s):
+def names_for(patients):
+    """Every name part and street line of the supplied Patient resources, for scrubbing free text."""
+    out = set()
+    for p in patients:
+        for n in p.get("name", []):
+            out |= {n.get("family", "")} | set(n.get("given", []))
+        for a in p.get("address", []):
+            out |= set(a.get("line", []))
+    return sorted(x for x in out if len(x) >= 2)
+
+
+def _scrub_text(s, names=()):
     for _, p in TEXT_PATTERNS:
         s = p.sub("[removed]", s)
+    for n in names:
+        s = re.sub(rf"\b{re.escape(n)}\b", "[removed]", s, flags=re.I)
     return s
 
 
@@ -29,7 +42,7 @@ def _year_only(d):
     return d[:4]
 
 
-def deidentify(res, key: bytes, as_of_year=2026):
+def deidentify(res, key: bytes, as_of_year=2026, names=()):
     r = copy.deepcopy(res)
     for k in list(r):
         if k in DROP_KEYS:
@@ -42,23 +55,23 @@ def deidentify(res, key: bytes, as_of_year=2026):
             r["birthDate"] = str(y) if as_of_year - y <= 89 else str(as_of_year - 90)
         if "address" in r:
             r["address"] = [{"state": a["state"]} | ({"postalCode": a["postalCode"][:3] + "00"} if a.get("postalCode", "")[:3] not in LOW_POP_ZIP3 and a.get("postalCode") else {}) for a in r["address"] if a.get("state")]
-    _walk(r, key)
+    _walk(r, key, names)
     return r
 
 
-def _walk(o, key):
+def _walk(o, key, names=()):
     if isinstance(o, dict):
         for k, v in list(o.items()):
             if k == "reference" and isinstance(v, str) and "/" in v:
                 t, i = v.split("/", 1); o[k] = f"{t}/{pseudonym(i, key)}"
             elif k == "text" and isinstance(v, str):
-                o[k] = _scrub_text(v)
+                o[k] = _scrub_text(v, names)
             elif k.endswith(("DateTime", "Date")) or k in ("start", "end", "issued"):
                 if isinstance(v, str) and DATE.search(v): o[k] = v[:4]
             else:
-                _walk(v, key)
+                _walk(v, key, names)
     elif isinstance(o, list):
-        for x in o: _walk(x, key)
+        for x in o: _walk(x, key, names)
 
 
 def leaks(res, raw_values=()):
