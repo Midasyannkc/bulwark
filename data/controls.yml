@@ -1,0 +1,18 @@
+# Control library.  Framework mappings are cited by ID only.  NIST ids are checked against the real catalog.
+# SOC 2 = AICPA Trust Services Criteria ids; HIPAA = 45 CFR 164 Security Rule citations; HITRUST = CSF control category names only.
+controls:
+  - {id: BW-IAM-01, title: MFA enforced for every console user, collector: mfa, frequency_days: 30, soc2: [CC6.1], hipaa: ["164.312(d)"], nist: [ia-2, ia-2.1], hitrust: ["01 Access Control"]}
+  - {id: BW-IAM-02, title: Offboarded users have no active access, collector: offboarding, frequency_days: 30, soc2: [CC6.2, CC6.3], hipaa: ["164.308(a)(3)(ii)(C)"], nist: [ac-2, ps-4], hitrust: ["01 Access Control", "02 Human Resources Security"]}
+  - {id: BW-IAM-03, title: Access keys rotated within 90 days, collector: key_age, frequency_days: 30, soc2: [CC6.1], hipaa: ["164.312(d)"], nist: [ia-5], hitrust: ["01 Access Control"]}
+  - {id: BW-IAM-04, title: Privileged access limited and protected, collector: privileged, frequency_days: 30, soc2: [CC6.3], hipaa: ["164.308(a)(4)(ii)(B)"], nist: [ac-6, ac-6.5], hitrust: ["01 Access Control"]}
+  - {id: BW-ACC-01, title: Access reviews completed within 90 days for every system, collector: access_review, frequency_days: 90, soc2: [CC6.2], hipaa: ["164.308(a)(4)(ii)(C)", "164.308(a)(1)(ii)(D)"], nist: [ac-2], hitrust: ["01 Access Control"]}
+  - {id: BW-ENC-01, title: PHI buckets are encrypted, versioned and not public, collector: phi_buckets, frequency_days: 30, soc2: [CC6.1, CC6.7], hipaa: ["164.312(a)(2)(iv)", "164.312(c)(1)"], nist: [sc-28, sc-28.1, sc-7], hitrust: ["06 Configuration Management", "09 Transmission Protection"]}
+  - {id: BW-ENC-02, title: Every bucket blocks public access, collector: bucket_public, frequency_days: 30, soc2: [CC6.6], hipaa: ["164.312(a)(1)"], nist: [ac-3, sc-7], hitrust: ["01 Access Control"]}
+  - {id: BW-ENC-03, title: Databases encrypted, PHI databases backed up 7 days or more, collector: databases, frequency_days: 30, soc2: [CC6.1, A1.2], hipaa: ["164.312(a)(2)(iv)", "164.308(a)(7)(ii)(A)"], nist: [sc-28, cp-9], hitrust: ["09 Transmission Protection", "12 Business Continuity"]}
+  - {id: BW-ENC-04, title: Encryption keys rotate, collector: kms_rotation, frequency_days: 90, soc2: [CC6.1], hipaa: ["164.312(a)(2)(iv)"], nist: [sc-12], hitrust: ["06 Configuration Management"]}
+  - {id: BW-LOG-01, title: Tamper evident multi-region audit logging, collector: cloudtrail, frequency_days: 30, soc2: [CC7.2], hipaa: ["164.312(b)"], nist: [au-2, au-9, au-12], hitrust: ["09 Audit Logging and Monitoring"]}
+  - {id: BW-NET-01, title: No administrative port open to the internet, collector: admin_ports, frequency_days: 30, soc2: [CC6.6], hipaa: ["164.312(e)(1)"], nist: [sc-7, ac-17], hitrust: ["09 Network Protection"]}
+  - {id: BW-VULN-01, title: Vulnerabilities remediated inside SLA (critical 15 days, high 30), collector: vuln_sla, frequency_days: 30, soc2: [CC7.1], hipaa: ["164.308(a)(1)(ii)(A)", "164.308(a)(1)(ii)(B)"], nist: [ra-5, si-2], hitrust: ["10 Vulnerability Management"]}
+  - {id: BW-END-01, title: Endpoints are disk encrypted and run EDR, collector: endpoints, frequency_days: 30, soc2: [CC6.7], hipaa: ["164.310(d)(1)", "164.312(a)(2)(iv)"], nist: [sc-28, si-3], hitrust: ["01 Endpoint Protection"]}
+  - {id: BW-BCP-01, title: Backup restore tested within 180 days, collector: restore_test, frequency_days: 180, soc2: [A1.3], hipaa: ["164.308(a)(7)(ii)(B)"], nist: [cp-4, cp-9], hitrust: ["12 Business Continuity"]}
+  - {id: BW-TRN-01, title: Security awareness training 95 percent complete, collector: training, frequency_days: 90, soc2: [CC1.4], hipaa: ["164.308(a)(5)(i)"], nist: [at-2], hitrust: ["02 Education, Training and Awareness"]}

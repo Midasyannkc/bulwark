@@ -1,0 +1,431 @@
+{
+ "as_of": "2026-10-30",
+ "iam": {
+  "users": [
+   {
+    "name": "a.rivera",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 3,
+    "key_age_days": 45,
+    "admin": true,
+    "offboarded": false
+   },
+   {
+    "name": "b.chen",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 5,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "c.okafor",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 1,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "d.martin",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 3,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "e.silva",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 8,
+    "key_age_days": 45,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "f.nguyen",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 1,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "g.patel",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 5,
+    "key_age_days": 75,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "h.kim",
+    "console": true,
+    "mfa": false,
+    "last_used_days": 1,
+    "key_age_days": 45,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "i.sato",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 1,
+    "key_age_days": 75,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "j.diaz",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 140,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": true
+   },
+   {
+    "name": "k.brown",
+    "console": true,
+    "mfa": false,
+    "last_used_days": 8,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "l.lopez",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 2,
+    "key_age_days": 20,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "svc-ci",
+    "console": false,
+    "mfa": false,
+    "last_used_days": 8,
+    "key_age_days": 190,
+    "admin": true,
+    "offboarded": false
+   },
+   {
+    "name": "svc-backup",
+    "console": false,
+    "mfa": false,
+    "last_used_days": 8,
+    "key_age_days": 80,
+    "admin": false,
+    "offboarded": false
+   },
+   {
+    "name": "break-glass",
+    "console": true,
+    "mfa": true,
+    "last_used_days": 5,
+    "key_age_days": 20,
+    "admin": true,
+    "offboarded": false
+   }
+  ]
+ },
+ "s3": {
+  "buckets": [
+   {
+    "name": "cc-phi-docs",
+    "public_access_block": true,
+    "encrypted": true,
+    "versioning": true,
+    "logging": true,
+    "phi": true
+   },
+   {
+    "name": "cc-phi-exports",
+    "public_access_block": true,
+    "encrypted": true,
+    "versioning": false,
+    "logging": true,
+    "phi": true
+   },
+   {
+    "name": "cc-app-assets",
+    "public_access_block": false,
+    "encrypted": true,
+    "versioning": true,
+    "logging": true,
+    "phi": false
+   },
+   {
+    "name": "cc-logs-archive",
+    "public_access_block": true,
+    "encrypted": false,
+    "versioning": true,
+    "logging": true,
+    "phi": false
+   }
+  ]
+ },
+ "cloudtrail": {
+  "trails": [
+   {
+    "name": "org-trail",
+    "multi_region": true,
+    "log_validation": true,
+    "kms": true,
+    "s3_bucket": "cc-logs-archive"
+   }
+  ]
+ },
+ "rds": {
+  "instances": [
+   {
+    "id": "phi-db",
+    "encrypted": true,
+    "public": false,
+    "backup_days": 14,
+    "multi_az": true,
+    "phi": true
+   },
+   {
+    "id": "reporting",
+    "encrypted": true,
+    "public": false,
+    "backup_days": 3,
+    "multi_az": false,
+    "phi": false
+   }
+  ]
+ },
+ "network": {
+  "security_groups": [
+   {
+    "id": "sg-web",
+    "ingress": [
+     {
+      "port": 443,
+      "cidr": "0.0.0.0/0"
+     }
+    ]
+   },
+   {
+    "id": "sg-admin",
+    "ingress": [
+     {
+      "port": 22,
+      "cidr": "0.0.0.0/0"
+     }
+    ]
+   },
+   {
+    "id": "sg-db",
+    "ingress": [
+     {
+      "port": 5432,
+      "cidr": "10.0.0.0/16"
+     }
+    ]
+   }
+  ]
+ },
+ "kms": {
+  "keys": [
+   {
+    "id": "k-phi",
+    "rotation": true
+   },
+   {
+    "id": "k-logs",
+    "rotation": true
+   },
+   {
+    "id": "k-legacy",
+    "rotation": false
+   }
+  ]
+ },
+ "access_reviews": [
+  {
+   "system": "AWS",
+   "last_review": "2026-08-20",
+   "reviewer": "security-engineer"
+  },
+  {
+   "system": "EHR",
+   "last_review": "2026-02-02",
+   "reviewer": "clinical-ops-lead"
+  },
+  {
+   "system": "IdP",
+   "last_review": "2026-09-30",
+   "reviewer": "it-ops"
+  }
+ ],
+ "vulnerabilities": {
+  "open": [
+   {
+    "id": "V1",
+    "sev": "critical",
+    "age_days": 4
+   },
+   {
+    "id": "V2",
+    "sev": "critical",
+    "age_days": 19
+   },
+   {
+    "id": "V3",
+    "sev": "high",
+    "age_days": 22
+   },
+   {
+    "id": "V4",
+    "sev": "high",
+    "age_days": 41
+   },
+   {
+    "id": "V5",
+    "sev": "medium",
+    "age_days": 50
+   }
+  ]
+ },
+ "endpoints": [
+  {
+   "host": "lap-01",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-02",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-03",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-04",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 20
+  },
+  {
+   "host": "lap-05",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 35
+  },
+  {
+   "host": "lap-06",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-07",
+   "disk_encrypted": false,
+   "edr": false,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-08",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 20
+  },
+  {
+   "host": "lap-09",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-10",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-11",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-12",
+   "disk_encrypted": true,
+   "edr": false,
+   "os_patch_days": 20
+  },
+  {
+   "host": "lap-13",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-14",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-15",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 3
+  },
+  {
+   "host": "lap-16",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 10
+  },
+  {
+   "host": "lap-17",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 35
+  },
+  {
+   "host": "lap-18",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 35
+  },
+  {
+   "host": "lap-19",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 20
+  },
+  {
+   "host": "lap-20",
+   "disk_encrypted": true,
+   "edr": true,
+   "os_patch_days": 35
+  }
+ ],
+ "backups": {
+  "last_restore_test": "2026-07-14"
+ },
+ "training": {
+  "employees": 40,
+  "completed": 37
+ }
+}
