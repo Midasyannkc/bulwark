@@ -23,3 +23,18 @@ def test_required_elements_enforced():
     e = dict(FX["encounters"][0]); del e["class"]
     assert any(f.rule == "missing-required" for f in spec.validate(e))
 
+
+
+def test_choice_type_value_x_accepted_and_wrong_suffix_rejected():
+    o = dict(FX["observations"][0])
+    assert spec.validate(o) == []
+    o["valueBanana"] = 1
+    assert any(f.rule == "unknown-element" for f in spec.validate(o))
+
+
+def test_choice_type_suffix_must_be_an_allowed_type():
+    o = dict(FX["observations"][0]); del o["valueQuantity"]
+    for good in ("valueString", "valueBoolean", "valueCodeableConcept", "valueDateTime", "valueInteger"):
+        assert not [f for f in spec.validate({**o, good: 1}) if f.rule == "unknown-element"], good
+    for bad in ("valueBanana", "valuePatient", "valueQuantityX"):
+        assert any(f.rule == "unknown-element" for f in spec.validate({**o, bad: 1})), bad
