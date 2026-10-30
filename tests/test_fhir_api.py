@@ -73,3 +73,14 @@ def test_unfiltered_search_is_limited_to_the_callers_compartment():
 def test_practitioner_user_scope_may_search_across_patients():
     tok = {"scope": "user/Patient.read user/Observation.read", "sub": "dr-1"}
     assert call("GET", "/Patient", token=tok, query={"name": "Fakename"})[1]["total"] == 2
+
+
+SYS = {"scope": "system/*.read", "sub": "svc-export"}
+
+
+def test_bulk_export_requires_a_system_scope():
+    assert call("GET", "/$export", token=None)[0] == 401
+    assert call("GET", "/$export", token=P1)[0] == 403
+    assert call("GET", "/$export", token={"scope": "user/Patient.read", "sub": "dr"})[0] == 403
+    s, b = call("GET", "/$export", token=SYS)
+    assert s == 200 and len(b["entry"]) == 7
