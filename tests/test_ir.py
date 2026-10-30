@@ -77,3 +77,21 @@ def test_weak_play_findings_name_the_mistakes():
     w = T.score(SC, RB, SC["plays"]["weak"])
     text = " ".join(w["findings"])
     assert "D1" in text and "evidence" in text and w["skipped_steps"]
+
+
+def test_every_runbook_has_an_explicit_evidence_preservation_step_in_containment():
+    for rb in DOC["runbooks"]:
+        assert any(s["phase"] == "containment" and s.get("preserves_evidence") for s in rb["steps"]), rb["id"]
+
+
+def test_lint_flags_runbook_without_structured_preservation_step():
+    d = copy.deepcopy(DOC)
+    for s in d["runbooks"][2]["steps"]: s.pop("preserves_evidence", None); s["action"] = s["action"].replace("preserve", "keep")
+    assert any(f.rule == "containment-without-preservation" for f in R.lint(d))
+
+
+def test_isolation_step_that_merely_mentions_memory_is_not_preservation():
+    d = copy.deepcopy(DOC)
+    rb = d["runbooks"][2]
+    for s in rb["steps"]: s.pop("preserves_evidence", None)
+    assert any(f.rule == "containment-without-preservation" for f in R.lint(d))
