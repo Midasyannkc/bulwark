@@ -1,0 +1,21 @@
+{
+ "patients": [
+  {"resourceType": "Patient", "id": "p1", "identifier": [{"system": "urn:example:mrn", "value": "MRN-100234"}, {"system": "http://hl7.org/fhir/sid/us-ssn", "value": "900-12-3456"}],
+   "active": true, "name": [{"family": "Fakename", "given": ["Ada"]}], "telecom": [{"system": "phone", "value": "555-010-0101"}, {"system": "email", "value": "ada.fakename@example.test"}],
+   "gender": "female", "birthDate": "1948-03-14", "address": [{"line": ["12 Imaginary Rd"], "city": "Testville", "state": "TX", "postalCode": "75001"}]},
+  {"resourceType": "Patient", "id": "p2", "identifier": [{"system": "urn:example:mrn", "value": "MRN-100871"}],
+   "active": true, "name": [{"family": "Samplesmith", "given": ["Ben"]}], "telecom": [{"system": "phone", "value": "555-010-0202"}],
+   "gender": "male", "birthDate": "1991-11-02", "address": [{"line": ["9 Placeholder Ln"], "city": "Mockton", "state": "TX", "postalCode": "75002"}]},
+  {"resourceType": "Patient", "id": "p3", "identifier": [{"system": "urn:example:mrn", "value": "MRN-100999"}],
+   "active": true, "name": [{"family": "Fakename", "given": ["Cora"]}], "gender": "female", "birthDate": "1930-06-30",
+   "address": [{"city": "Testville", "state": "TX", "postalCode": "75001"}]}
+ ],
+ "observations": [
+  {"resourceType": "Observation", "id": "o1", "status": "final", "code": {"text": "Systolic blood pressure"}, "subject": {"reference": "Patient/p1"}, "effectiveDateTime": "2026-09-01", "valueQuantity": {"value": 142, "unit": "mmHg"}},
+  {"resourceType": "Observation", "id": "o2", "status": "final", "code": {"text": "HbA1c"}, "subject": {"reference": "Patient/p2"}, "effectiveDateTime": "2026-09-12", "valueQuantity": {"value": 6.1, "unit": "%"}},
+  {"resourceType": "Observation", "id": "o3", "status": "final", "code": {"text": "Weight"}, "subject": {"reference": "Patient/p1"}, "effectiveDateTime": "2026-10-03", "valueQuantity": {"value": 61, "unit": "kg"}, "note": [{"text": "Patient Ada Fakename called from 555-010-0101 on 2026-10-03 about dosage."}]}
+ ],
+ "encounters": [
+  {"resourceType": "Encounter", "id": "e1", "status": "finished", "class": {"code": "VR", "display": "virtual"}, "subject": {"reference": "Patient/p2"}, "period": {"start": "2026-09-12T09:00:00Z", "end": "2026-09-12T09:20:00Z"}}
+ ]
+}
