@@ -1,0 +1,149 @@
+{
+ "evidence": {
+  "as_of": "2026-10-30",
+  "baseline_coverage": {
+   "baseline_base_controls": 177,
+   "by_family": {
+    "ac": "4/17",
+    "at": "1/4",
+    "au": "3/11",
+    "ca": "0/7",
+    "cm": "0/12",
+    "cp": "2/9",
+    "ia": "2/10",
+    "ir": "0/8",
+    "ma": "0/6",
+    "mp": "0/7",
+    "pe": "0/16",
+    "pl": "0/6",
+    "ps": "1/9",
+    "ra": "1/6",
+    "sa": "0/11",
+    "sc": "3/18",
+    "si": "2/11",
+    "sr": "0/9"
+   },
+   "covered": 19,
+   "percent": 10.7
+  },
+  "controls": 15,
+  "exceptions": {
+   "BW-ACC-01": [
+    "EHR"
+   ],
+   "BW-ENC-01": [
+    "cc-phi-exports"
+   ],
+   "BW-ENC-02": [
+    "cc-app-assets"
+   ],
+   "BW-ENC-04": [
+    "k-legacy"
+   ],
+   "BW-END-01": [
+    "lap-07",
+    "lap-12"
+   ],
+   "BW-IAM-01": [
+    "h.kim",
+    "k.brown"
+   ],
+   "BW-IAM-02": [
+    "j.diaz"
+   ],
+   "BW-IAM-03": [
+    "svc-ci"
+   ],
+   "BW-NET-01": [
+    "sg-admin"
+   ],
+   "BW-TRN-01": [
+    "92.5 percent complete"
+   ],
+   "BW-VULN-01": [
+    "V2",
+    "V4"
+   ]
+  },
+  "hash_failures": 0,
+  "nist_mapping_errors": 0,
+  "stale_after_60_days": 11,
+  "status": {
+   "exception": 11,
+   "pass": 4
+  }
+ },
+ "fhir": {
+  "api_probe_status": {
+   "export with patient token": 403,
+   "export without token": 401,
+   "read another patient's record": 404,
+   "read own record (must work)": 200,
+   "write into another compartment": 403
+  },
+  "deid_leaks": 0,
+  "fixtures_validated_against_r4": 7,
+  "partners": {
+   "ehr-partner": 8,
+   "lab-vendor": 0,
+   "marketing-analytics": 6
+  },
+  "phi_in_audit_log": false,
+  "r4_resources_loaded": 15,
+  "spec_findings": 0
+ },
+ "incident_response": {
+  "breach_deadlines": {
+   "hhs": "2027-01-08",
+   "individuals": "2027-01-08",
+   "media": "2027-01-08"
+  },
+  "lint_findings": 0,
+  "runbooks": 3,
+  "strong_grade": 100,
+  "tabletop": "TT-1",
+  "weak_findings": 13,
+  "weak_grade": 6
+ },
+ "incidents": 10,
+ "reference_data": {
+  "attack_techniques": 706,
+  "nist_controls": 1196,
+  "nist_moderate_baseline": 287
+ },
+ "threat_model": {
+  "attack_techniques_cited": [
+   "T1040",
+   "T1528",
+   "T1530",
+   "T1567"
+  ],
+  "by_severity": {
+   "low": 1,
+   "medium": 1
+  },
+  "by_stride": {
+   "I": 1,
+   "S": 1
+  },
+  "citations_unverified": 0,
+  "elements": 11,
+  "flows": 10,
+  "nist_controls_cited": [
+   "ac-4",
+   "ia-5",
+   "sc-23",
+   "sc-28",
+   "sc-28.1",
+   "sc-8",
+   "sc-8.1",
+   "si-12"
+  ],
+  "threat_list": [
+   "phi-to-partner-unminimized @ F5 fhir_adapter->ehr_partner",
+   "bearer-only-internal-auth @ F7 visit_service->video_service"
+  ],
+  "threats": 2,
+  "what_if_no_tls_no_encryption_threats": 15
+ }
+}
