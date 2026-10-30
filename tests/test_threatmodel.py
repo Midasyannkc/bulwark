@@ -57,3 +57,18 @@ def test_removing_authn_from_gateway_is_flagged():
 
 def test_output_is_deterministic():
     assert [f.to_dict() for f in E.analyze(MODEL)] == [f.to_dict() for f in E.analyze(copy.deepcopy(MODEL))]
+
+
+def test_data_class_typo_must_not_silently_drop_a_threat():
+    """'phi' is not 'PHI'.  A lowercase typo used to remove the flow from every PHI rule."""
+    m = copy.deepcopy(MODEL)
+    next(f for f in m["flows"] if f["id"] == "F4")["data"] = ["phi"]
+    next(f for f in m["flows"] if f["id"] == "F4")["tls"] = False
+    with pytest.raises(E.ModelError):
+        E.analyze(m)
+
+
+def test_unknown_element_in_flow_is_a_model_error_not_a_keyerror():
+    m = copy.deepcopy(MODEL); m["flows"][0]["dst"] = "api_gatway"
+    with pytest.raises(E.ModelError):
+        E.analyze(m)
