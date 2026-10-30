@@ -22,7 +22,7 @@ def build(snapshot, controls=None):
     for c in controls:
         res = C.COLLECTORS[c["collector"]](snapshot)
         art = {"control": c["id"], "as_of": snapshot["as_of"], "result": res}
-        items.append({"control": c["id"], "title": c["title"], "status": "pass" if res["passed"] else "exception", "population": res["population"], "sample": res["sample"],
+        items.append({"control": c["id"], "title": c["title"], "status": "untestable" if res["population"] == 0 else ("pass" if res["passed"] else "exception"), "population": res["population"], "sample": res["sample"],
                       "exceptions": res["exceptions"], "collected": snapshot["as_of"], "expires": (as_of + timedelta(days=c["frequency_days"])).isoformat(),
                       "sha256": hashlib.sha256(canon(art)).hexdigest(), "soc2": c["soc2"], "hipaa": c["hipaa"], "nist": c["nist"], "hitrust": c["hitrust"], "artifact": art})
     return {"as_of": snapshot["as_of"], "items": items}

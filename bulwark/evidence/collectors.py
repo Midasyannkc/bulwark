@@ -99,6 +99,8 @@ def restore_test(s):
 
 def training(s):
     t = s["training"]
+    if not t["employees"]:
+        return {"population": 0, "sample": [], "exceptions": [], "passed": False, "note": "no employees in the population"}
     pct = 100 * t["completed"] / t["employees"]
     return {"population": t["employees"], "sample": [], "exceptions": [] if pct >= 95 else [f"{pct:.1f} percent complete"], "passed": pct >= 95, "note": "completion at least 95 percent"}
 
