@@ -66,3 +66,14 @@ def test_sampling_is_stable_and_bounded():
 def test_baseline_coverage_is_computed_from_real_nist_data_and_is_honestly_partial():
     c = P.coverage()
     assert c["baseline_base_controls"] > 100 and 0 < c["percent"] < 40
+
+
+def test_empty_population_is_not_a_pass():
+    """If no PHI bucket is found the control was not tested; an auditor must not be handed 'pass'."""
+    s = copy.deepcopy(SNAP); s["s3"]["buckets"] = [b for b in s["s3"]["buckets"] if not b["phi"]]
+    assert {i["control"]: i for i in P.build(s)["items"]}["BW-ENC-01"]["status"] == "untestable"
+
+
+def test_zero_employees_does_not_crash_the_training_collector():
+    s = copy.deepcopy(SNAP); s["training"] = {"employees": 0, "completed": 0}
+    assert {i["control"]: i for i in P.build(s)["items"]}["BW-TRN-01"]["status"] == "untestable"
