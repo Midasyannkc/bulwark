@@ -55,3 +55,21 @@ def test_writer_cannot_write_into_another_patients_compartment():
     assert call("POST", "/Observation", token=tok, body=other)[0] == 403
     mine = {**other, "id": "o7", "subject": {"reference": "Patient/p1"}}
     assert call("POST", "/Observation", token=tok, body=mine)[0] == 201
+
+
+def test_name_search_does_not_reveal_other_patients_to_a_patient_token():
+    s, b = call("GET", "/Patient", query={"name": "Fakename"})    # matches p1 (self) and p3 (stranger)
+    ids = sorted(e["resource"]["id"] for e in b["entry"])
+    assert ids == ["p1"], ids
+    s, b = call("GET", "/Patient", query={"name": "Samplesmith"})
+    assert b["total"] == 0
+
+
+def test_unfiltered_search_is_limited_to_the_callers_compartment():
+    s, b = call("GET", "/Observation")
+    assert sorted(e["resource"]["id"] for e in b["entry"]) == ["o1", "o3"]
+
+
+def test_practitioner_user_scope_may_search_across_patients():
+    tok = {"scope": "user/Patient.read user/Observation.read", "sub": "dr-1"}
+    assert call("GET", "/Patient", token=tok, query={"name": "Fakename"})[1]["total"] == 2
