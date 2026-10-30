@@ -55,3 +55,25 @@ def test_breach_deadlines_small_breach_goes_to_hhs_after_year_end():
 
 def test_business_associate_notifies_covered_entity():
     assert B.deadlines(date(2026, 10, 1), 10, role="business_associate") == {"individuals": date(2026, 11, 30), "covered_entity": date(2026, 11, 30)}
+
+
+from bulwark.ir import tabletop as T
+
+SC = T.load(Path(__file__).resolve().parents[1] / "data/ir/scenarios.yml")["scenarios"][0]
+RB = next(r for r in DOC["runbooks"] if r["id"] == SC["runbook"])
+
+
+def test_strong_play_scores_far_above_weak():
+    s, w = T.score(SC, RB, SC["plays"]["strong"]), T.score(SC, RB, SC["plays"]["weak"])
+    assert s["grade"] >= 90 and w["grade"] <= 40 and s["grade"] - w["grade"] >= 50
+
+
+def test_scenario_deadlines_use_discovery_date_and_revealed_counts():
+    s = T.score(SC, RB, SC["plays"]["strong"])
+    assert s["deadlines"] == {"hhs": "2027-01-08", "individuals": "2027-01-08", "media": "2027-01-08"}
+
+
+def test_weak_play_findings_name_the_mistakes():
+    w = T.score(SC, RB, SC["plays"]["weak"])
+    text = " ".join(w["findings"])
+    assert "D1" in text and "evidence" in text and w["skipped_steps"]

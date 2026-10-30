@@ -1,0 +1,34 @@
+scenarios:
+  - id: TT-1
+    title: Ransomware on a clinic workstation
+    runbook: RB-3
+    discovered: 2026-11-09
+    injects:
+      - {t: 0,   text: "EDR alerts on mass file renames on workstation CLN-14. A ransom note appears on screen."}
+      - {t: 25,  text: "Two more hosts show the same behavior. One has a shared drive with scanned intake forms."}
+      - {t: 90,  text: "Forensics finds a staging archive of 1,840 patient records on CLN-14 created before encryption began.", facts: {affected: 1840, largest_state: 1700, acquired: true}}
+    decisions:
+      - id: D1
+        question: "Hosts are encrypting files. What is the first containment action?"
+        options:
+          A: {text: "Isolate the hosts with EDR and leave them powered on", correct: true, why: "Stops spread and preserves memory and artifacts"}
+          B: {text: "Power the hosts off immediately", correct: false, why: "Loses volatile evidence and may leave encryption half finished"}
+          C: {text: "Wipe and reimage now to restore service quickly", correct: false, why: "Destroys evidence and removes the chance to find initial access"}
+      - id: D2
+        question: "The archive shows data left the network. How is the breach decision made?"
+        options:
+          A: {text: "Run the four factor assessment; with data acquired, treat as a reportable breach and start the 60 day clock from discovery", correct: true, why: "Acquisition of PHI presumes a breach unless low probability of compromise is demonstrated"}
+          B: {text: "Wait until forensics is finished before deciding anything", correct: false, why: "Discovery date, not forensic completion, starts the clock"}
+          C: {text: "Treat it as encryption only, no notification needed", correct: false, why: "Contradicted by the staging archive"}
+      - id: D3
+        question: "The attacker demands payment. What does the incident commander do?"
+        options:
+          A: {text: "Escalate to legal and the cyber insurer; do not pay on the engineering team's authority", correct: true, why: "Payment is a legal and business decision with sanctions risk"}
+          B: {text: "Pay quickly to recover the data", correct: false, why: "Unilateral, risky, and does not remove the breach obligations"}
+    plays:
+      strong:
+        decisions: {D1: A, D2: A, D3: A}
+        steps: {1: 15, 2: 20, 3: 30, 4: 55, 5: 600, 6: 2000, 7: 2900, 8: 3000, 9: 7000}
+      weak:
+        decisions: {D1: C, D2: B, D3: B}
+        steps: {1: 60, 2: 120, 6: 300, 3: 400, 9: 20000}
